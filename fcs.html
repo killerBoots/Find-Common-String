@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Find Common String</title>
+  <script type="text/javascript">
+    function decode(input){
+      // Break apart the input into an array of 2 strings
+      inputArr = input.match(/(\w+)/gm);
+      // Grab each array element and place into a var
+      var stringX = inputArr.slice(0, 1);
+      var stringY = inputArr.slice(1, 2);
+      
+
+      // Used to test arrays,vars, and results while in dev
+      document.querySelector('#result').value = stringX;
+    }
+  </script>
+</head>
+
+<body>
+  <h1 id="title">Find Common String</h1>
+  <label>Input
+    <textarea id="myTextArea" />ABCDEFG
+ABCDEGF</textarea>
+  </label>
+  <input type="submit" value="Decode" onclick="decode(document.querySelector('#myTextArea').value)" /> <br />
+  <label>Output
+    <input type="text" id="result" readonly /></label>
+  <h3>ABCDEFG<br />ABCDEGF</h3>
+  
+</body>
+
+</html>
