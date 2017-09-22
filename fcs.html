@@ -13,8 +13,18 @@
       // Split the parent array into individual characters same with remaining string
       var splitParent = parent.split('');
       var splitChild = child.split('');
+	console.log(splitChild)
+      // Attempting to check child array against parent array
+      splitChild.forEach((element, index) => {
+	if (element === splitParent.toString()) {
+		document.querySelector('#result').value = 'Test';
+	} else { 
+		document.querySelector('#result').value = splitParent.length;
+		}
+	});
       // Used to test arrays,vars, and results while in dev
-      document.querySelector('#result').value = splitChild;
+      // document.querySelector('#result').value = splitChild;
+	console.log(letter);
     }
   </script>
 </head>
