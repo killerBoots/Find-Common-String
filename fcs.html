@@ -6,18 +6,15 @@
   <script type="text/javascript">
     function decode(input){
       // Break apart the input into an array of 2 strings
-      inputArr = input.match(/(\w+)/gm);
+      inputArr = input.match(/(\w+)/g);
       // Pop the parent element out of the inputArray
       var parent = inputArr.pop();
-      // Split the parent array into individual characters, same with remaining string
+      var child = inputArr.pop();
+      // Split the parent array into individual characters same with remaining string
       var splitParent = parent.split('');
-      var splitChild = inputArr.split('');
-	    // Look into forEach for comparative logic
-
-
-	
+      var splitChild = child.split('');
       // Used to test arrays,vars, and results while in dev
-      document.querySelector('#result').value = splitParent;
+      document.querySelector('#result').value = splitChild;
     }
   </script>
 </head>
@@ -25,12 +22,14 @@
 <body>
   <h1 id="title">Find Common String</h1>
   <label>Input
-    <textarea id="myTextArea" onkeyup="decode(document.querySelector('#myTextArea').value)" />ABCDEFG
+    <textarea id="myTextArea">ABCDEFG
 ABCDEGF</textarea>
   </label>
-  <input type="submit" value="Decode" onclick="decode(document.querySelector('#myTextArea').value)" /> <br />
+  <input type="submit" value="Decode" onclick="decode(document.querySelector
+
+('#myTextArea').value)" /> <br />
   <label>Output
-    <input type="text" id="result" /></label>
+    <input type="text" id="result" readonly /></label>
   <h3>ABCDEFG<br />ABCDEGF</h3>
   
 </body>
